@@ -693,9 +693,10 @@ namespace SmartHunter.Game.Helpers
 
             if (ConfigHelper.MonsterData.Values.Monsters.ContainsKey(id) && ConfigHelper.MonsterData.Values.Monsters[id].Parts != null && ConfigHelper.MonsterData.Values.Monsters[id].Parts.Count() > 0)
             {
+                UpdateMonsterParts(process, monster);
                 if (OverlayViewModel.Instance.MonsterWidget.Context.AlwaysShowParts || (!OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsValid || OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsCurrentPlayerLobbyHost() || !OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsPlayerOnline()))
                 {
-                    UpdateMonsterParts(process, monster);
+                    //UpdateMonsterParts(process, monster);
                     if (ConfigHelper.MonsterData.Values.Monsters[id].Parts.Where(p => p.IsRemovable).Count() > 0) // In case you are testing add "|| true"
                     {
                         UpdateMonsterRemovableParts(process, monster);

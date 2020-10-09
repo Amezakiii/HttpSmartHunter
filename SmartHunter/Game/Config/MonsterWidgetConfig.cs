@@ -8,11 +8,16 @@ namespace SmartHunter.Game.Config
         // em[0-9]|ems[0-9]|gm[0-9]
         public string IncludeMonsterIdRegex = "em[0-9]";
         public string IncludePartGroupIdRegex = ".*";
+        public string IncludePartSoftenGroupIdRegex = ".*";
         public string IncludeStatusEffectGroupIdRegex = ".*";
         public bool ShowUnchangedMonsters = true;
         public float HideMonstersAfterSeconds = 999f;
+        public bool ShowParts = true;
         public bool ShowUnchangedParts = false;
         public float HidePartsAfterSeconds = 12f;
+        public bool ShowSoftenParts = true;
+        public float HideSoftenPartsAfterSeconds = 6f;
+        public bool ShowStatusEffects = true;
         public bool ShowUnchangedStatusEffects = false;
         public float HideStatusEffectsAfterSeconds = 12f;
 
@@ -38,6 +43,11 @@ namespace SmartHunter.Game.Config
         public bool MatchIncludePartGroupIdRegex(string groupId)
         {
             return new Regex(IncludePartGroupIdRegex).IsMatch(groupId);
+        }
+
+        public bool MatchIncludePartSoftenGroupIdRegex(string groupId)
+        {
+            return new Regex(IncludePartSoftenGroupIdRegex).IsMatch(groupId);
         }
 
         public bool MatchIncludeStatusEffectGroupIdRegex(string groupId)

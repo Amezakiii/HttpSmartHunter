@@ -59,8 +59,6 @@ namespace SmartHunter.StartServer
                     await resp.OutputStream.WriteAsync(data, 0, data.Length);
                     resp.Close();
                 }
-
-
                 //When Getting give the entire html file to it.
                 if (req.HttpMethod == "GET")
                 {
@@ -104,10 +102,7 @@ namespace SmartHunter.StartServer
                 listener.Start();
             }
             //Console.WriteLine("Listening for connections on {0}", url);
-
-            // Handle requests
-            //Task listenTask = HandleIncomingConnections();
-            //listenTask.GetAwaiter().GetResult();
+            // Handle requests//Task listenTask = HandleIncomingConnections();//listenTask.GetAwaiter().GetResult();
             HandleIncomingConnections();
         }
         public static void StartServer(bool OnThread)

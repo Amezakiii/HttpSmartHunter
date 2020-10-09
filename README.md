@@ -20,7 +20,7 @@ I simply added some functions to start a httpserver to respond to the page that 
     - Depending on the isVisible property of the UI, different functions were called.
 - I personally is not a fan of knowing my teammates's damage, so this function is off by default.
     - Even if it was turned on, you need to manually click on the page to show the data. 
-    - This function in the original also appears to be a little buggy, we sometimes had a total of damage higher than what's possible. For example, BEOTODUS seems to have 12k health, but for some reason, sometimes our total damage sums down to 16k.
+    - This function in the original also appears to be a little buggy, we sometimes had a total of damage higher than what's possible. For example, BEOTODUS seems to have 12k health, but for some reason, our total damage sums down to 16k one time.
 
 ## Usage for functions I added.
 - Turn off the visibility of each UI.
@@ -30,6 +30,8 @@ I simply added some functions to start a httpserver to respond to the page that 
         - Check your firewall settings for the in and out bound rules to set the port, I used 8080 here, my typical testing port, you can find tutorials for [in](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/create-an-inbound-port-rule) and [out](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/create-an-outbound-port-rule).
         - The device you want to use to see the data in the same network.
 - Some features are hidden as foldable, so you need to click to extend them. Like monster parts and team damage, etc.
+- I added ways to customize settings like showing player damage percentage etc.
+- Images are not supported for the index.html file.
 
 ## Releases
 They are essentially the same version, but I planned on releasing multiple copy compiled in different way just in case anyone wants a specific version but don't know how to compile it. I will add a settings file in the future.

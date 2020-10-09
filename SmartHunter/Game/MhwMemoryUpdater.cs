@@ -84,16 +84,11 @@ namespace SmartHunter.Game
             /*
             var range = new AddressRange(0x140000000, 0x169233000);
             //var pattern = new BytePattern(new Config.BytePatternConfig("48 8B 05 ?? ?? ?? ?? 41 8B", "140000000", "163B0A000", null));
-
             var pattern = new BytePattern(new Config.BytePatternConfig("null", "48 8B 0D ?? ?? ?? ??", null));
             var matches = MemoryHelper.FindPatternAddresses(Process, range, pattern, false);
-
             Log.WriteLine($"Found {matches.Count()} matches...");
-
             ulong[] lookingFor = new ulong[1] { 0x144FA8720 };
-
             var res = new System.Collections.Generic.List<ulong>();
-
             foreach (ulong address in matches)
             {
                 ulong lear = MemoryHelper.LoadEffectiveAddressRelative(Process, address);
@@ -116,7 +111,7 @@ namespace SmartHunter.Game
 
                 ulong currentPlayerNamePtr = MemoryHelper.LoadEffectiveAddressRelative(Process, m_CurrentPlayerNamePattern.MatchedAddresses.First());
                 //ulong currentFelyneNameAddress = MemoryHelper.ReadMultiLevelPointer(traceUniquePointers, Process, currentPlayerNamePtr, 0xB40, 0x0, 0x890, 0x160, 0x8, 0x1E8, 0x7DC);
-                
+
 
                 ulong currentPlayerNameAddress = MemoryHelper.ReadMultiLevelPointer(traceUniquePointers, Process, currentPlayerNamePtr, 0xB20, 0x0, 0x530, 0xC0, 0x8, 0x78, 0x78);
 
@@ -185,7 +180,7 @@ namespace SmartHunter.Game
                     OverlayViewModel.Instance.TeamWidget.Context.ClearPlayers();
                 }
                 // You added Here//
-                
+
                 if (!ConfigHelper.Main.Values.Overlay.TeamWidget.IsVisible && m_PlayerDamagePattern.MatchedAddresses.Any() && m_PlayerNamePattern.MatchedAddresses.Any() /*&& (!OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsValid || OverlayViewModel.Instance.DebugWidget.Context.CurrentGame.IsPlayerOnline())*/)
                 {
                     ulong playerNamesPtr = MemoryHelper.LoadEffectiveAddressRelative(Process, m_PlayerNamePattern.MatchedAddresses.First());
@@ -202,7 +197,13 @@ namespace SmartHunter.Game
                         MhwHelper.GetPlayerDamage(Process, damageOnScreePtr);
                     }
                 }
-                
+                else{
+                    if (OverlayViewModel.Instance.TeamWidget.Context.Players.Any())
+                    {
+                        OverlayViewModel.Instance.TeamWidget.Context.ClearPlayers();
+                    }
+                }
+
                 ////
 
                 if (m_PlayerBuffPattern.MatchedAddresses.Any())
@@ -246,7 +247,7 @@ namespace SmartHunter.Game
             {
                 OverlayViewModel.Instance.IsGameActive = false;
             }
-            else if (!OverlayViewModel.Instance.IsVisible && 
+            else if (!OverlayViewModel.Instance.IsVisible &&
                 (!ConfigHelper.Main.Values.Overlay.HideWhenGameWindowIsInactive || foregroundWindowHandle == Process.MainWindowHandle))
             {
                 OverlayViewModel.Instance.IsGameActive = true;

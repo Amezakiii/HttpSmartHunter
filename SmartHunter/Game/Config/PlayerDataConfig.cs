@@ -75,15 +75,16 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_DRAGON_RESISTANCE_BOOST_L", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(52)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_ELEMENTAL_ATTACK_BOOST", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(53)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_BLIGHT_NEGATED", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(54)),
-
-
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_KNOCKBACKS_NEGATED", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(57)),
-
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_ELEMENTAL_RESISTANCE_UP", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(59)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_AFFINITY_UP", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(60)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_ALL_AILMENTS_NEGATED", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(61)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_WIND_PRESSURE_NEGATED_AND_EARPLUGS_S", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(62)),
             new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_ABNORMAL_STATUS_ATTACK_INCREASED", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(63)),
+            new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_STAMINA_UP_AND_RECOVERY", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(67)),
+            new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_EXTENDED_HEALTH_RECOVERY", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(68)),
+            new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_SPEED_BOOST_AND_EVADE_WINDOW_UP", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(69)),
+            new StatusEffectConfig("Horn", "LOC_STATUS_EFFECT_ELEMENTAL_EFFECTIVENESS_UP", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(70)),
 
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_ATTACK_UP_S", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(72)),
             new StatusEffectConfig("Coral", "LOC_STATUS_EFFECT_ATTACK_UP_L", (uint)StatusEffectConfig.MemorySource.Base, indexToHexStrNoOffset(73)),
@@ -190,20 +191,26 @@ namespace SmartHunter.Game.Config
             new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_ATTACK", (uint)StatusEffectConfig.MemorySource.Weapon, "1FE8", WeaponType.INSECT_GLAIVE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_SPEED", (uint)StatusEffectConfig.MemorySource.Weapon, "1FEC", WeaponType.INSECT_GLAIVE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_DEFENSE", (uint)StatusEffectConfig.MemorySource.Weapon, "1FF0", WeaponType.INSECT_GLAIVE),
-            */
-            // Working
-
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_HELM_BREAKER", (uint)WeaponType.LONG_SWORD, indexToHexStrNoOffset(2402)),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_LAI_SLASH", (uint)WeaponType.LONG_SWORD, indexToHexStrNoOffset(2406)),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_STEADY_SPIRIT_LEVEL", (uint)WeaponType.LONG_SWORD, indexToHexStrNoOffset(2408)),
-
-            // Not Working
-            /*
             new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", (uint)StatusEffectConfig.MemorySource.Weapon, "1FF8", WeaponType.CHARGE_BLADE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", (uint)StatusEffectConfig.MemorySource.Weapon, "1FFC", WeaponType.CHARGE_BLADE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_SWITCH_AXE_AMPED_STATE", (uint)StatusEffectConfig.MemorySource.Weapon, "1FD4", WeaponType.SWITCH_AXE),
             new StatusEffectConfig("Weapon", "LOC_WEAPON_HAMMER_POWER_CHARGE", (uint)StatusEffectConfig.MemorySource.Weapon, null, WeaponType.HAMMER, new MemoryConditionConfig((byte)1, "1FC4"))
             */
+            //Working
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_SHIELD_CHARGE", (uint)WeaponType.CHARGE_BLADE, indexToHexStrNoOffset(2270)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_BLADE_CHARGE", (uint)WeaponType.CHARGE_BLADE, indexToHexStrNoOffset(2271)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_CHARGE_BLADE_PHIAL_EXPIRES", (uint)WeaponType.CHARGE_BLADE, indexToHexStrNoOffset(2332)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_SPIRIT_GAUGE_REGEN_LAI_SLASH",  (uint)WeaponType.LONG_SWORD, indexToHexStrNoOffset(2269)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_LONGSWORD_STEADY_SPIRIT_LEVEL",  (uint)WeaponType.LONG_SWORD, indexToHexStrNoOffset(2268)),
+
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_ATTACK", (uint)WeaponType.INSECT_GLAIVE, indexToHexStrNoOffset(2266)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_SPEED", (uint)WeaponType.INSECT_GLAIVE, indexToHexStrNoOffset(2267)),
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_INSECT_GLAIVE_DEFENSE", (uint)WeaponType.INSECT_GLAIVE, indexToHexStrNoOffset(2268)),
+
+            new StatusEffectConfig("Weapon", "LOC_WEAPON_SWITCH_AXE_AMPED_STATE", (uint)WeaponType.SWITCH_AXE, indexToHexStrNoOffset(2260)),
             };
     }
 }
