@@ -19,7 +19,7 @@ namespace SmartHunter.StartServer
         public static HttpListener listener;
         //If you want to see the data on smartphone it is recommended to change this to "http://*:8080/", which would need to be run as admin
         //I might add manifest to force admin in the future
-        public static string url = "http://*:8080/";
+        public static string url = "http://192.168.1.24:8080/";
         public static int requestCount = 0;
         public static string pageData;
 
